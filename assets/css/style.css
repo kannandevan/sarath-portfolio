@@ -1295,3 +1295,98 @@ font-weight: 600;
     position: relative;
     z-index: 2;
 }
+
+
+
+
+.main-categories {
+  margin-bottom: 40px;
+}
+.category-thumb {
+  cursor: pointer;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s;
+}
+.category-thumb img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.category-thumb h3 {
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 5px 12px;
+  border-radius: 5px;
+  font-size: 18px;
+}
+.category-thumb:hover {
+  transform: scale(1.03);
+}
+
+/* Back Button */
+.back-btn {
+  background: #222;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 25px;
+}
+.back-btn:hover {
+  background: #555;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Category gallery grid */
+#category-gallery .box {
+  margin-bottom: 20px;
+}
+#category-gallery img {
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+#category-gallery img:hover {
+  transform: scale(1.03);
+}
+
+
+/* === Uniform Thumbnail Sizing === */
+
+/* Category thumbnails (main view) */
+.category-thumb {
+  aspect-ratio: 1 / 1; /* keeps them square */
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #111;
+}
+
+.category-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* crops neatly without distortion */
+  border-radius: 10px;
+}
+
+/* Gallery images (inside each category) */
+#category-gallery .box img {
+  width: 100%;
+  height: 250px; /* you can adjust this (e.g., 220px or 300px) */
+  object-fit: cover;
+  border-radius: 10px;
+}

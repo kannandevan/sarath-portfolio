@@ -75,34 +75,34 @@
 	<!-- END NAVBAR-->
 
 	<!-- START HOME -->
-<section data-stellar-background-ratio="0.3" id="home" class="home_bg"
-        style="background-image: url(assets/img/bg.jpg); background-size:cover; background-position: center center;">
-        
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-sm-12 col-xs-12">
-                    <div class="about_me_content">
-                        <span> - I Am Sarath S Potty</span>
-                        <h1 class="typewrite" data-period="2000"
-                            data-type='[ "3D Modeler", "FREELANCER", "Graphic Designer" ]'>
-                            <span class="wrap"></span>
-                        </h1>
-                    </div>
-                    <div class="basic-info d-flex flex-wrap gap-5">
-                        <div class="single-basic-info">
-                            <p>Email: <br /><span>sarathspotty04@gmail.com</span></p>
-                        </div>
-                        <div class="single-basic-info">
-                            <p>Phone: <br /><span>+91 81379 76133</span></p>
-                        </div>
-                        <div class="single-basic-info">
-                            <p>Nationality: <br /><span>INDIA</span></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+	<section data-stellar-background-ratio="0.3" id="home" class="home_bg"
+		style="background-image: url(assets/img/bg.jpg); background-size:cover; background-position: center center;">
+
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-sm-12 col-xs-12">
+					<div class="about_me_content">
+						<span> - I Am Sarath S Potty</span>
+						<h1 class="typewrite" data-period="2000"
+							data-type='[ "3D Modeler", "FREELANCER", "Graphic Designer" ]'>
+							<span class="wrap"></span>
+						</h1>
+					</div>
+					<div class="basic-info d-flex flex-wrap gap-5">
+						<div class="single-basic-info">
+							<p>Email: <br /><span>sarathspotty04@gmail.com</span></p>
+						</div>
+						<div class="single-basic-info">
+							<p>Phone: <br /><span>+91 81379 76133</span></p>
+						</div>
+						<div class="single-basic-info">
+							<p>Nationality: <br /><span>INDIA</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 	<!-- END  HOME -->
 
 	<!-- START ABOUT -->
@@ -232,789 +232,141 @@
 	<!-- END SERVICE -->
 
 
-
-	<!-- START PORTFOLIOS -->
+	<!-- START PORTFOLIO (Gallery App Style) -->
 	<section id="portfolio" class="portfolio_area section-padding">
 		<div class="container">
 			<div class="section-title text-center">
-				<h1>The projects</h1>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				<h1>My Works</h1>
+				<p>Tap a category to view its gallery.</p>
 			</div>
-			<div class="row portfolio_item">
-				<div class="col-lg-12 text-center">
-					<div class="portfolio_filter">
-						<ul>
-							<li class="active filter" data-filter="all">All</li>
-							<li class="filter" data-filter=".design">Design</li>
-							<li class="filter" data-filter=".3d">3D</li>
-							<li class="filter" data-filter=".illustration">Illustration</li>
-							<li class="filter" data-filter=".ai">AI</li>
 
+			<!-- CATEGORY VIEW (MAIN) -->
+			<div id="category-list" class="row text-center main-categories">
+				<div class="col-md-4">
+					<div class="category-thumb" data-category="3d">
+						<img src="assets/img/portfolio/sofa1.jpg" alt="3D Art">
+						<h3>3D Art</h3>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="category-thumb" data-category="design">
+						<img src="assets/img/portfolio/tropicana.jpg" alt="Graphic Design">
+						<h3>Graphic Design</h3>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="category-thumb" data-category="ai">
+						<img src="assets/img/portfolio/hero_with_gun.png" alt="AI Art">
+						<h3>AI Art</h3>
+					</div>
+				</div>
+			</div>
 
-						</ul>
-					</div>
-				</div><!--END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix ai">
-					<div class="box">
-						<img src="assets/img/portfolio/hero_with_gun.png" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/hero_with_gun.png" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix ai">
-					<div class="box">
-						<img src="assets/img/portfolio/villan_with_gun.png" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/villan_with_gun.png" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
+			<!-- CATEGORY DETAIL VIEW -->
+			<div id="category-view" class="hidden">
+				<button id="back-btn" class="back-btn"><i class="fa fa-arrow-left"></i> Back to Categories</button>
+				<h2 id="category-title" class="text-center mb-4"></h2>
+				<div id="category-gallery" class="row">
 
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix ai">
-					<div class="box">
-						<img src="assets/img/portfolio/gentleman_helicoptor.png" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
+					<!-- 3D ART -->
+					<div class="category-items" data-cat="3d">
+						<div class="col-sm-6 col-lg-4">
+							<div class="box"><img src="assets/img/portfolio/sofa1.jpg" alt="">
+								<ul class="icon">
+									<li><a href="assets/img/portfolio/sofa1.jpg" class="lightbox" data-gall="3d"><i
+												class="fa fa-eye"></i></a></li>
+								</ul>
+							</div>
 						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/gentleman_helicoptor.png" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
+						<div class="col-sm-6 col-lg-4">
+							<div class="box"><img src="assets/img/portfolio/sofa2.jpg" alt="">
+								<ul class="icon">
+									<li><a href="assets/img/portfolio/sofa2.jpg" class="lightbox" data-gall="3d"><i
+												class="fa fa-eye"></i></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-sm-6 col-lg-4">
+							<div class="box"><img src="assets/img/portfolio/lattern1.jpg" alt="">
+								<ul class="icon">
+									<li><a href="assets/img/portfolio/lattern1.jpg" class="lightbox" data-gall="3d"><i
+												class="fa fa-eye"></i></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-sm-6 col-lg-4">
+							<div class="box"><img src="assets/img/portfolio/lattern2.jpg" alt="">
+								<ul class="icon">
+									<li><a href="assets/img/portfolio/lattern2.jpg" class="lightbox" data-gall="3d"><i
+												class="fa fa-eye"></i></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-sm-6 col-lg-4">
+							<div class="box"><img src="assets/img/portfolio/RIKSHAW_1.jpg" alt="">
+								<ul class="icon">
+									<li><a href="assets/img/portfolio/RIKSHAW_1.jpg" class="lightbox" data-gall="3d"><i
+												class="fa fa-eye"></i></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-sm-6 col-lg-4">
+							<div class="box"><img src="assets/img/portfolio/RIKSHAW_2.jpg" alt="">
+								<ul class="icon">
+									<li><a href="assets/img/portfolio/RIKSHAW_2.jpg" class="lightbox" data-gall="3d"><i
+												class="fa fa-eye"></i></a></li>
+								</ul>
+							</div>
+						</div>
 					</div>
-				</div><!--- END COL -->
 
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix ai">
-					<div class="box">
-						<img src="assets/img/portfolio/laughing_wanted.png" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
+					<!-- GRAPHIC DESIGN -->
+					<div class="category-items" data-cat="design">
+						<div class="col-sm-6 col-lg-4">
+							<div class="box"><img src="assets/img/portfolio/tropicana.jpg" alt="">
+								<ul class="icon">
+									<li><a href="assets/img/portfolio/tropicana.jpg" class="lightbox"
+											data-gall="design"><i class="fa fa-eye"></i></a></li>
+								</ul>
+							</div>
 						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/laughing_wanted.png" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
+						<div class="col-sm-6 col-lg-4">
+							<div class="box"><img src="assets/img/portfolio/pet2.jpg" alt="">
+								<ul class="icon">
+									<li><a href="assets/img/portfolio/pet2.jpg" class="lightbox" data-gall="design"><i
+												class="fa fa-eye"></i></a></li>
+								</ul>
+							</div>
+						</div>
 					</div>
-				</div><!--- END COL -->
 
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix ai">
-					<div class="box">
-						<img src="assets/img/portfolio/char_1.png" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
+					<!-- AI ART -->
+					<div class="category-items" data-cat="ai">
+						<div class="col-sm-6 col-lg-4">
+							<div class="box"><img src="assets/img/portfolio/hero_with_gun.png" alt="">
+								<ul class="icon">
+									<li><a href="assets/img/portfolio/hero_with_gun.png" class="lightbox"
+											data-gall="ai"><i class="fa fa-eye"></i></a></li>
+								</ul>
+							</div>
 						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/char_1.png" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
+						<div class="col-sm-6 col-lg-4">
+							<div class="box"><img src="assets/img/portfolio/villan_with_gun.png" alt="">
+								<ul class="icon">
+									<li><a href="assets/img/portfolio/villan_with_gun.png" class="lightbox"
+											data-gall="ai"><i class="fa fa-eye"></i></a></li>
+								</ul>
+							</div>
+						</div>
 					</div>
-				</div><!--- END COL -->
 
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix ai">
-					<div class="box">
-						<img src="assets/img/portfolio/char_2.png" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/char_2.png" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
+				</div>
+			</div>
 
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix ai">
-					<div class="box">
-						<img src="assets/img/portfolio/char_3.png" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/char_3.png" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix ai">
-					<div class="box">
-						<img src="assets/img/portfolio/char_4.png" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/char_4.png" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix ai">
-					<div class="box">
-						<img src="assets/img/portfolio/char_5.png" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/char_5.png" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix ai">
-					<div class="box">
-						<img src="assets/img/portfolio/char_6.png" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/char_6.png" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix design">
-					<div class="box">
-						<img src="assets/img/portfolio/tropicana.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/tropicana.jpg" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix design">
-					<div class="box">
-						<img src="assets/img/portfolio/Stand_Poster.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/Stand_Poster.jpg" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix design">
-					<div class="box">
-						<img src="assets/img/portfolio/q3.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/q3.jpg" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix design">
-					<div class="box">
-						<img src="assets/img/portfolio/q2.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/q2.jpg" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix design">
-					<div class="box">
-						<img src="assets/img/portfolio/pet1.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/pet1.jpg" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix design">
-					<div class="box">
-						<img src="assets/img/portfolio/pet2.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/pet2.jpg" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix design">
-					<div class="box">
-						<img src="assets/img/portfolio/pet3.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/pet3.jpg" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix design">
-					<div class="box">
-						<img src="assets/img/portfolio/pet4.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/pet4.jpg" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix design">
-					<div class="box">
-						<img src="assets/img/portfolio/pet5.png" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/pet5.png" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix design">
-					<div class="box">
-						<img src="assets/img/portfolio/pet6.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/pet6.jpg" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-
-
-
-
-
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix 3d">
-					<div class="box">
-						<img src="assets/img/portfolio/sofa1.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/sofa1.jpg" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix 3d">
-					<div class="box">
-						<img src="assets/img/portfolio/sofa2.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/sofa2.jpg" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix 3d">
-					<div class="box">
-						<img src="assets/img/portfolio/lattern1.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/lattern1.jpg" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix 3d">
-					<div class="box">
-						<img src="assets/img/portfolio/lattern2.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/lattern2.jpg" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix 3d">
-					<div class="box">
-						<img src="assets/img/portfolio/lattern3.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/lattern3.jpg" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix 3d">
-					<div class="box">
-						<img src="assets/img/portfolio/1.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/1.jpg" class="port-icon lightbox" data-gall="gall-work"><i
-										class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix 3d">
-					<div class="box">
-						<img src="assets/img/portfolio/2.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/2.jpg" class="port-icon lightbox" data-gall="gall-work"><i
-										class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix 3d">
-					<div class="box">
-						<img src="assets/img/portfolio/3.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/3.jpg" class="port-icon lightbox" data-gall="gall-work"><i
-										class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix 3d">
-					<div class="box">
-						<img src="assets/img/portfolio/4.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/4.jpg" class="port-icon lightbox" data-gall="gall-work"><i
-										class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix 3d">
-					<div class="box">
-						<img src="assets/img/portfolio/5.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/5.jpg" class="port-icon lightbox" data-gall="gall-work"><i
-										class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix 3d">
-					<div class="box">
-						<img src="assets/img/portfolio/AEX_1.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/AEX_1.jpg" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix 3d">
-					<div class="box">
-						<img src="assets/img/portfolio/AEX_2.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/AEX_2.jpg" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix 3d">
-					<div class="box">
-						<img src="assets/img/portfolio/AEX_3.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/AEX_3.jpg" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix 3d">
-					<div class="box">
-						<img src="assets/img/portfolio/CHAIR_1.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/CHAIR_1.jpg" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix 3d">
-					<div class="box">
-						<img src="assets/img/portfolio/CHAIR_2.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/CHAIR_2.jpg" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix 3d">
-					<div class="box">
-						<img src="assets/img/portfolio/EXTINGUSHER_1.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/EXTINGUSHER_1.jpg" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix 3d">
-					<div class="box">
-						<img src="assets/img/portfolio/EXTINGUSHER_2.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/EXTINGUSHER_2.jpg" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix 3d">
-					<div class="box">
-						<img src="assets/img/portfolio/EXTINGUSHER_3.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/EXTINGUSHER_3.jpg" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix 3d">
-					<div class="box">
-						<img src="assets/img/portfolio/GRANADE_1.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/GRANADE_1.jpg" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix 3d">
-					<div class="box">
-						<img src="assets/img/portfolio/GRANADE_2.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/GRANADE_2.jpg" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix 3d">
-					<div class="box">
-						<img src="assets/img/portfolio/RIKSHAW_1.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/RIKSHAW_1.jpg" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix 3d">
-					<div class="box">
-						<img src="assets/img/portfolio/RIKSHAW_2.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/RIKSHAW_2.jpg" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix 3d">
-					<div class="box">
-						<img src="assets/img/portfolio/RIKSHAW_3.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/RIKSHAW_3.jpg" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix 3d">
-					<div class="box">
-						<img src="assets/img/portfolio/TREASURE_1.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/TREASURE_1.jpg" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix 3d">
-					<div class="box">
-						<img src="assets/img/portfolio/TREASURE_2.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/TREASURE_2.jpg" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix 3d">
-					<div class="box">
-						<img src="assets/img/portfolio/TREASURE_3.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/TREASURE_3.jpg" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix 3d">
-					<div class="box">
-						<img src="assets/img/portfolio/TREASURE_4.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/TREASURE_4.jpg" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix illustration">
-					<div class="box">
-						<img src="assets/img/portfolio/Character.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/Character.jpg" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix illustration">
-					<div class="box">
-						<img src="assets/img/portfolio/Eye.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/Eye.jpg" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix ai">
-					<div class="box">
-						<img src="assets/img/portfolio/POSTER.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/POSTER.jpg" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix ai">
-					<div class="box">
-						<img src="assets/img/portfolio/SCENE_01.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/SCENE_01.jpg" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix ai">
-					<div class="box">
-						<img src="assets/img/portfolio/SCENE_02.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/SCENE_02.jpg" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix ai">
-					<div class="box">
-						<img src="assets/img/portfolio/SCENE_03.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/SCENE_03.jpg" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix ai">
-					<div class="box">
-						<img src="assets/img/portfolio/SCENE_04.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/SCENE_04.jpg" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix ai">
-					<div class="box">
-						<img src="assets/img/portfolio/SCENE_05.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/SCENE_05.jpg" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix ai">
-					<div class="box">
-						<img src="assets/img/portfolio/SCENE_06.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/SCENE_06.jpg" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-				<div class="col-xs-12 col-sm-6 col-lg-4 mix ai">
-					<div class="box">
-						<img src="assets/img/portfolio/SCENE_07.jpg" alt="">
-						<div class="box-content">
-							<h3 class="title"></h3>
-							<span class="post"></span>
-						</div>
-						<ul class="icon">
-							<li><a href="assets/img/portfolio/SCENE_07.jpg" class="port-icon lightbox"
-									data-gall="gall-work"><i class="fa fa-eye"></i></a></li>
-						</ul>
-					</div>
-				</div><!--- END COL -->
-
-
-			</div><!-- / END ROW -->
-		</div><!-- END CONTAINER  -->
+		</div>
 	</section>
-	<!-- END PORTFOLIOS -->
+	<!-- END PORTFOLIO -->
+
 
 	<!-- START RESUME -->
 	<section id="resume" class="resume_area section-padding">
@@ -1087,8 +439,10 @@
 					<div class="single_footer">
 						<div class="footer_social_profile">
 							<ul>
-								<li><a href="https://www.linkedin.com/in/sarath-s-potty" target="_blank">Linked in</a></li>
-								<li><a href="https://www.instagram.com/sarath_s_potty" target="_blank">Instagram</a></li>
+								<li><a href="https://www.linkedin.com/in/sarath-s-potty" target="_blank">Linked in</a>
+								</li>
+								<li><a href="https://www.instagram.com/sarath_s_potty" target="_blank">Instagram</a>
+								</li>
 								<li><a href="https://sarathspotty04.artstation.com/" target="_blank">ArtStation</a></li>
 							</ul>
 						</div><!--- END SOCIAL PROFILE -->
@@ -1143,120 +497,198 @@
 	</script>
 
 
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
 
-        // --- 1. SETUP ---
-        const PARTICLE_COUNT = 150; // Set how many particles you want
-        const container = document.getElementById('home');
-        const obstacles = document.querySelectorAll('.single-basic-info, .about_me_content h1');
-        
-        if (!container) {
-            console.error("Animation container not found!");
-            return;
-        }
+			// --- 1. SETUP ---
+			const PARTICLE_COUNT = 150; // Set how many particles you want
+			const container = document.getElementById('home');
+			const obstacles = document.querySelectorAll('.single-basic-info, .about_me_content h1');
 
-        let containerWidth = container.clientWidth;
-        let containerHeight = container.clientHeight;
-        let obstacleRects = []; // Store obstacle dimensions
-        const particles = []; // Array to hold all particle objects
+			if (!container) {
+				console.error("Animation container not found!");
+				return;
+			}
 
-        // --- 2. PARTICLE CREATION ---
-        function createParticles() {
-            for (let i = 0; i < PARTICLE_COUNT; i++) {
-                const particleElement = document.createElement('div');
-                particleElement.classList.add('particle');
-                container.appendChild(particleElement);
+			let containerWidth = container.clientWidth;
+			let containerHeight = container.clientHeight;
+			let obstacleRects = []; // Store obstacle dimensions
+			const particles = []; // Array to hold all particle objects
 
-                // Randomize properties for each particle
-                const size = Math.random() * 8 + 2; // Size between 2px and 10px
-                const speed = Math.random() * 1 + 0.5; // Speed between 0.5 and 1.5
-                const angle = Math.random() * 2 * Math.PI;
+			// --- 2. PARTICLE CREATION ---
+			function createParticles() {
+				for (let i = 0; i < PARTICLE_COUNT; i++) {
+					const particleElement = document.createElement('div');
+					particleElement.classList.add('particle');
+					container.appendChild(particleElement);
 
-                particleElement.style.width = `${size}px`;
-                particleElement.style.height = `${size}px`;
-                particleElement.style.opacity = Math.random() * 0.5 + 0.3; // Opacity 0.3 to 0.8
+					// Randomize properties for each particle
+					const size = Math.random() * 8 + 2; // Size between 2px and 10px
+					const speed = Math.random() * 1 + 0.5; // Speed between 0.5 and 1.5
+					const angle = Math.random() * 2 * Math.PI;
 
-                particles.push({
-                    element: particleElement,
-                    x: Math.random() * (containerWidth - size),
-                    y: Math.random() * (containerHeight - size),
-                    dx: Math.cos(angle) * speed,
-                    dy: Math.sin(angle) * speed,
-                    size: size
-                });
-            }
-        }
-        
-        // --- 3. OBSTACLE & ANIMATION LOGIC ---
-        function updateObstacleRects() {
-            const containerRect = container.getBoundingClientRect();
-            obstacleRects = Array.from(obstacles).map(obs => {
-                const obsRect = obs.getBoundingClientRect();
-                // Return dimensions relative to the container
-                return {
-                    left: obsRect.left - containerRect.left,
-                    top: obsRect.top - containerRect.top,
-                    right: obsRect.right - containerRect.left,
-                    bottom: obsRect.bottom - containerRect.top,
-                };
-            });
-        }
+					particleElement.style.width = `${size}px`;
+					particleElement.style.height = `${size}px`;
+					particleElement.style.opacity = Math.random() * 0.5 + 0.3; // Opacity 0.3 to 0.8
 
-        function animate() {
-            // Loop through every particle to update its state
-            particles.forEach(p => {
-                p.x += p.dx;
-                p.y += p.dy;
+					particles.push({
+						element: particleElement,
+						x: Math.random() * (containerWidth - size),
+						y: Math.random() * (containerHeight - size),
+						dx: Math.cos(angle) * speed,
+						dy: Math.sin(angle) * speed,
+						size: size
+					});
+				}
+			}
 
-                // Wall Collision
-                if (p.x <= 0 || p.x + p.size >= containerWidth) {
-                    p.dx *= -1;
-                    p.x = Math.max(0, Math.min(p.x, containerWidth - p.size));
-                }
-                if (p.y <= 0 || p.y + p.size >= containerHeight) {
-                    p.dy *= -1;
-                    p.y = Math.max(0, Math.min(p.y, containerHeight - p.size));
-                }
+			// --- 3. OBSTACLE & ANIMATION LOGIC ---
+			function updateObstacleRects() {
+				const containerRect = container.getBoundingClientRect();
+				obstacleRects = Array.from(obstacles).map(obs => {
+					const obsRect = obs.getBoundingClientRect();
+					// Return dimensions relative to the container
+					return {
+						left: obsRect.left - containerRect.left,
+						top: obsRect.top - containerRect.top,
+						right: obsRect.right - containerRect.left,
+						bottom: obsRect.bottom - containerRect.top,
+					};
+				});
+			}
 
-                // Obstacle Collision
-                for (const obsRect of obstacleRects) {
-                    if (p.x < obsRect.right && p.x + p.size > obsRect.left &&
-                        p.y < obsRect.bottom && p.y + p.size > obsRect.top) {
-                        
-                        // Bounce logic
-                        p.dx *= -1;
-                        p.dy *= -1;
-                        break; // Exit loop once collision is detected for this particle
-                    }
-                }
+			function animate() {
+				// Loop through every particle to update its state
+				particles.forEach(p => {
+					p.x += p.dx;
+					p.y += p.dy;
 
-                // Apply new position
-                p.element.style.transform = `translate3d(${p.x}px, ${p.y}px, 0)`;
-            });
+					// Wall Collision
+					if (p.x <= 0 || p.x + p.size >= containerWidth) {
+						p.dx *= -1;
+						p.x = Math.max(0, Math.min(p.x, containerWidth - p.size));
+					}
+					if (p.y <= 0 || p.y + p.size >= containerHeight) {
+						p.dy *= -1;
+						p.y = Math.max(0, Math.min(p.y, containerHeight - p.size));
+					}
 
-            requestAnimationFrame(animate);
-        }
+					// Obstacle Collision
+					for (const obsRect of obstacleRects) {
+						if (p.x < obsRect.right && p.x + p.size > obsRect.left &&
+							p.y < obsRect.bottom && p.y + p.size > obsRect.top) {
 
-        // --- 4. INITIALIZATION & RESIZE HANDLING ---
-        function initialize() {
-            createParticles();
-            updateObstacleRects();
-            animate();
-        }
+							// Bounce logic
+							p.dx *= -1;
+							p.dy *= -1;
+							break; // Exit loop once collision is detected for this particle
+						}
+					}
 
-        window.addEventListener('resize', () => {
-            containerWidth = container.clientWidth;
-            containerHeight = container.clientHeight;
-            updateObstacleRects();
-            // Optional: You could reposition particles on resize, but it's often not necessary
-        });
+					// Apply new position
+					p.element.style.transform = `translate3d(${p.x}px, ${p.y}px, 0)`;
+				});
 
-        // A small delay for the typewriter animation to layout, then get obstacle positions
-        setTimeout(initialize, 2000);
-    });
-</script>
+				requestAnimationFrame(animate);
+			}
 
+			// --- 4. INITIALIZATION & RESIZE HANDLING ---
+			function initialize() {
+				createParticles();
+				updateObstacleRects();
+				animate();
+			}
+
+			window.addEventListener('resize', () => {
+				containerWidth = container.clientWidth;
+				containerHeight = container.clientHeight;
+				updateObstacleRects();
+				// Optional: You could reposition particles on resize, but it's often not necessary
+			});
+
+			// A small delay for the typewriter animation to layout, then get obstacle positions
+			setTimeout(initialize, 2000);
+		});
+	</script>
+	<script>
+		document.addEventListener("DOMContentLoaded", () => {
+			// ===== Category data =====
+			const categories = {
+				"3d": {
+					title: "3D Art",
+					images: [
+						"assets/img/portfolio/sofa1.jpg",
+						"assets/img/portfolio/sofa2.jpg",
+						"assets/img/portfolio/lattern1.jpg",
+						"assets/img/portfolio/lattern2.jpg",
+						"assets/img/portfolio/RIKSHAW_1.jpg",
+						"assets/img/portfolio/RIKSHAW_2.jpg"
+					]
+				},
+				"design": {
+					title: "Graphic Design",
+					images: [
+						"assets/img/portfolio/tropicana.jpg",
+						"assets/img/portfolio/pet2.jpg"
+					]
+				},
+				"ai": {
+					title: "AI Art",
+					images: [
+						"assets/img/portfolio/hero_with_gun.png",
+						"assets/img/portfolio/villan_with_gun.png"
+					]
+				}
+			};
+
+			const categoryList = document.getElementById("category-list");
+			const categoryView = document.getElementById("category-view");
+			const categoryGallery = document.getElementById("category-gallery");
+			const categoryTitle = document.getElementById("category-title");
+			const backBtn = document.getElementById("back-btn");
+
+			// ===== Click on category =====
+			document.querySelectorAll(".category-thumb").forEach(thumb => {
+				thumb.addEventListener("click", () => {
+					const catKey = thumb.dataset.category;
+					const catData = categories[catKey];
+					if (!catData) return;
+
+					// Hide main categories and show gallery view
+					categoryList.classList.add("hidden");
+					categoryView.classList.remove("hidden");
+
+					// Set title
+					categoryTitle.textContent = catData.title;
+
+					// Build gallery
+					categoryGallery.innerHTML = "";
+					catData.images.forEach(img => {
+						const col = document.createElement("div");
+						col.className = "col-sm-6 col-lg-4";
+						col.innerHTML = `
+          <div class="box">
+            <img src="${img}" alt="">
+            <ul class="icon">
+              <li><a href="${img}" class="lightbox" data-gall="${catKey}"><i class="fa fa-eye"></i></a></li>
+            </ul>
+          </div>`;
+						categoryGallery.appendChild(col);
+					});
+
+					// Scroll smoothly to gallery
+					categoryView.scrollIntoView({ behavior: "smooth" });
+				});
+			});
+
+			// ===== Back button =====
+			backBtn.addEventListener("click", () => {
+				categoryView.classList.add("hidden");
+				categoryList.classList.remove("hidden");
+				window.scrollTo({ top: categoryList.offsetTop - 50, behavior: "smooth" });
+			});
+		});
+	</script>
 </body>
 
 </html>
