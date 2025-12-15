@@ -626,12 +626,16 @@
 
 	<script>
 		document.addEventListener("DOMContentLoaded", () => {
-			// ===== CATEGORY DATA: Updated to support separate thumbnails =====
-			// Format: { src: "path/to/full-image.jpg", thumb: "path/to/thumbnail.jpg" }
-			// Currently using the same image for both. You can update 'thumb' to a smaller/cropped version.
+
+			// ===== CATEGORY CONFIGURATION =====
+			// 1. coverImage: The main image shown on the Portfolio landing grid.
+			// 2. images: The gallery images shown when you click a category.
+			//    Each image has 'src' (full size) and 'thumb' (grid thumbnail).
+
 			const categories = {
 				"3d": {
 					title: "3D",
+					coverImage: "assets/img/portfolio/thumbs/3d-art-thumb.jpg", // <--- MAIN CATEGORY THUMBNAIL
 					images: [
 						{ src: "assets/img/portfolio/sofa1.jpg", thumb: "assets/img/portfolio/sofa1.jpg" },
 						{ src: "assets/img/portfolio/sofa2.jpg", thumb: "assets/img/portfolio/sofa2.jpg" },
@@ -665,6 +669,7 @@
 
 				"design": {
 					title: "Design",
+					coverImage: "assets/img/portfolio/thumbs/graphic-design-thumb.jpg", // <--- MAIN CATEGORY THUMBNAIL
 					images: [
 						{ src: "assets/img/portfolio/tropicana.jpg", thumb: "assets/img/portfolio/tropicana.jpg" },
 						{ src: "assets/img/portfolio/Stand_Poster.jpg", thumb: "assets/img/portfolio/Stand_Poster.jpg" },
@@ -681,6 +686,7 @@
 
 				"illustration": {
 					title: "Illustration",
+					coverImage: "assets/img/portfolio/thumbs/illustration-thumb.jpg", // <--- MAIN CATEGORY THUMBNAIL
 					images: [
 						{ src: "assets/img/portfolio/Character.jpg", thumb: "assets/img/portfolio/Character.jpg" },
 						{ src: "assets/img/portfolio/Eye.jpg", thumb: "assets/img/portfolio/Eye.jpg" }
@@ -689,6 +695,7 @@
 
 				"ai": {
 					title: "AI",
+					coverImage: "assets/img/portfolio/thumbs/ai-thumb.jpg", // <--- MAIN CATEGORY THUMBNAIL
 					images: [
 						{ src: "assets/img/portfolio/KING.png", thumb: "assets/img/portfolio/KING.png" },
 						{ src: "assets/img/portfolio/FIGTHING.png", thumb: "assets/img/portfolio/FIGTHING.png" },
@@ -721,6 +728,18 @@
 			const categoryGallery = document.getElementById("category-gallery");
 			const categoryTitle = document.getElementById("category-title");
 			const backBtn = document.getElementById("back-btn");
+
+			// ===== INITIALIZE GRID IMAGES =====
+			// This updates the main grid thumbnails from the data above
+			document.querySelectorAll(".category-thumb").forEach(thumb => {
+				const catKey = thumb.dataset.category;
+				if (categories[catKey] && categories[catKey].coverImage) {
+					const imgTag = thumb.querySelector("img");
+					if (imgTag) {
+						imgTag.src = categories[catKey].coverImage;
+					}
+				}
+			});
 
 			// Helper to switch view
 			function showCategory(catKey) {
