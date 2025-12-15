@@ -527,90 +527,92 @@
 
 	<script>
 		document.addEventListener("DOMContentLoaded", () => {
-			// ===== CATEGORY DATA: ALL IMAGES FROM YOUR OLD GRID =====
+			// ===== CATEGORY DATA: Updated to support separate thumbnails =====
+			// Format: { src: "path/to/full-image.jpg", thumb: "path/to/thumbnail.jpg" }
+			// Currently using the same image for both. You can update 'thumb' to a smaller/cropped version.
 			const categories = {
 				"3d": {
 					title: "3D",
 					images: [
-						"assets/img/portfolio/sofa1.jpg",
-						"assets/img/portfolio/sofa2.jpg",
-						"assets/img/portfolio/lattern1.jpg",
-						"assets/img/portfolio/lattern2.jpg",
-						"assets/img/portfolio/lattern3.jpg",
-						"assets/img/portfolio/1.jpg",
-						"assets/img/portfolio/2.jpg",
-						"assets/img/portfolio/3.jpg",
-						"assets/img/portfolio/4.jpg",
-						"assets/img/portfolio/5.jpg",
-						"assets/img/portfolio/AEX_1.jpg",
-						"assets/img/portfolio/AEX_2.jpg",
-						"assets/img/portfolio/AEX_3.jpg",
-						"assets/img/portfolio/CHAIR_1.jpg",
-						"assets/img/portfolio/CHAIR_2.jpg",
-						"assets/img/portfolio/EXTINGUSHER_1.jpg",
-						"assets/img/portfolio/EXTINGUSHER_2.jpg",
-						"assets/img/portfolio/EXTINGUSHER_3.jpg",
-						"assets/img/portfolio/GRANADE_1.jpg",
-						"assets/img/portfolio/GRANADE_2.jpg",
-						"assets/img/portfolio/RIKSHAW_1.jpg",
-						"assets/img/portfolio/RIKSHAW_2.jpg",
-						"assets/img/portfolio/RIKSHAW_3.jpg",
-						"assets/img/portfolio/TREASURE_1.jpg",
-						"assets/img/portfolio/TREASURE_2.jpg",
-						"assets/img/portfolio/TREASURE_3.jpg",
-						"assets/img/portfolio/TREASURE_4.jpg"
+						{ src: "assets/img/portfolio/sofa1.jpg", thumb: "assets/img/portfolio/sofa1.jpg" },
+						{ src: "assets/img/portfolio/sofa2.jpg", thumb: "assets/img/portfolio/sofa2.jpg" },
+						{ src: "assets/img/portfolio/lattern1.jpg", thumb: "assets/img/portfolio/lattern1.jpg" },
+						{ src: "assets/img/portfolio/lattern2.jpg", thumb: "assets/img/portfolio/lattern2.jpg" },
+						{ src: "assets/img/portfolio/lattern3.jpg", thumb: "assets/img/portfolio/lattern3.jpg" },
+						{ src: "assets/img/portfolio/1.jpg", thumb: "assets/img/portfolio/1.jpg" },
+						{ src: "assets/img/portfolio/2.jpg", thumb: "assets/img/portfolio/2.jpg" },
+						{ src: "assets/img/portfolio/3.jpg", thumb: "assets/img/portfolio/3.jpg" },
+						{ src: "assets/img/portfolio/4.jpg", thumb: "assets/img/portfolio/4.jpg" },
+						{ src: "assets/img/portfolio/5.jpg", thumb: "assets/img/portfolio/5.jpg" },
+						{ src: "assets/img/portfolio/AEX_1.jpg", thumb: "assets/img/portfolio/AEX_1.jpg" },
+						{ src: "assets/img/portfolio/AEX_2.jpg", thumb: "assets/img/portfolio/AEX_2.jpg" },
+						{ src: "assets/img/portfolio/AEX_3.jpg", thumb: "assets/img/portfolio/AEX_3.jpg" },
+						{ src: "assets/img/portfolio/CHAIR_1.jpg", thumb: "assets/img/portfolio/CHAIR_1.jpg" },
+						{ src: "assets/img/portfolio/CHAIR_2.jpg", thumb: "assets/img/portfolio/CHAIR_2.jpg" },
+						{ src: "assets/img/portfolio/EXTINGUSHER_1.jpg", thumb: "assets/img/portfolio/EXTINGUSHER_1.jpg" },
+						{ src: "assets/img/portfolio/EXTINGUSHER_2.jpg", thumb: "assets/img/portfolio/EXTINGUSHER_2.jpg" },
+						{ src: "assets/img/portfolio/EXTINGUSHER_3.jpg", thumb: "assets/img/portfolio/EXTINGUSHER_3.jpg" },
+						{ src: "assets/img/portfolio/GRANADE_1.jpg", thumb: "assets/img/portfolio/GRANADE_1.jpg" },
+						{ src: "assets/img/portfolio/GRANADE_2.jpg", thumb: "assets/img/portfolio/GRANADE_2.jpg" },
+						{ src: "assets/img/portfolio/RIKSHAW_1.jpg", thumb: "assets/img/portfolio/RIKSHAW_1.jpg" },
+						{ src: "assets/img/portfolio/RIKSHAW_2.jpg", thumb: "assets/img/portfolio/RIKSHAW_2.jpg" },
+						{ src: "assets/img/portfolio/RIKSHAW_3.jpg", thumb: "assets/img/portfolio/RIKSHAW_3.jpg" },
+						{ src: "assets/img/portfolio/TREASURE_1.jpg", thumb: "assets/img/portfolio/TREASURE_1.jpg" },
+						{ src: "assets/img/portfolio/TREASURE_2.jpg", thumb: "assets/img/portfolio/TREASURE_2.jpg" },
+						{ src: "assets/img/portfolio/TREASURE_3.jpg", thumb: "assets/img/portfolio/TREASURE_3.jpg" },
+						{ src: "assets/img/portfolio/TREASURE_4.jpg", thumb: "assets/img/portfolio/TREASURE_4.jpg" }
 					]
 				},
 
 				"design": {
 					title: "Design",
 					images: [
-						"assets/img/portfolio/tropicana.jpg",
-						"assets/img/portfolio/Stand_Poster.jpg",
-						"assets/img/portfolio/q3.jpg",
-						"assets/img/portfolio/q2.jpg",
-						"assets/img/portfolio/pet1.jpg",
-						"assets/img/portfolio/pet2.jpg",
-						"assets/img/portfolio/pet3.jpg",
-						"assets/img/portfolio/pet4.jpg",
-						"assets/img/portfolio/pet5.png",
-						"assets/img/portfolio/pet6.jpg"
+						{ src: "assets/img/portfolio/tropicana.jpg", thumb: "assets/img/portfolio/tropicana.jpg" },
+						{ src: "assets/img/portfolio/Stand_Poster.jpg", thumb: "assets/img/portfolio/Stand_Poster.jpg" },
+						{ src: "assets/img/portfolio/q3.jpg", thumb: "assets/img/portfolio/q3.jpg" },
+						{ src: "assets/img/portfolio/q2.jpg", thumb: "assets/img/portfolio/q2.jpg" },
+						{ src: "assets/img/portfolio/pet1.jpg", thumb: "assets/img/portfolio/pet1.jpg" },
+						{ src: "assets/img/portfolio/pet2.jpg", thumb: "assets/img/portfolio/pet2.jpg" },
+						{ src: "assets/img/portfolio/pet3.jpg", thumb: "assets/img/portfolio/pet3.jpg" },
+						{ src: "assets/img/portfolio/pet4.jpg", thumb: "assets/img/portfolio/pet4.jpg" },
+						{ src: "assets/img/portfolio/pet5.png", thumb: "assets/img/portfolio/pet5.png" },
+						{ src: "assets/img/portfolio/pet6.jpg", thumb: "assets/img/portfolio/pet6.jpg" }
 					]
 				},
 
 				"illustration": {
 					title: "Illustration",
 					images: [
-						"assets/img/portfolio/Character.jpg",
-						"assets/img/portfolio/Eye.jpg"
+						{ src: "assets/img/portfolio/Character.jpg", thumb: "assets/img/portfolio/Character.jpg" },
+						{ src: "assets/img/portfolio/Eye.jpg", thumb: "assets/img/portfolio/Eye.jpg" }
 					]
 				},
 
 				"ai": {
 					title: "AI",
 					images: [
-						"assets/img/portfolio/KING.png",
-						"assets/img/portfolio/FIGTHING.png",
-						"assets/img/portfolio/PRINCE.png",
-						"assets/img/portfolio/QUEEN.png",
-						"assets/img/portfolio/hero_with_gun.png",
-						"assets/img/portfolio/villan_with_gun.png",
-						"assets/img/portfolio/gentleman_helicoptor.png",
-						"assets/img/portfolio/laughing_wanted.png",
-						"assets/img/portfolio/char_1.png",
-						"assets/img/portfolio/char_2.png",
-						"assets/img/portfolio/char_3.png",
-						"assets/img/portfolio/char_4.png",
-						"assets/img/portfolio/char_5.png",
-						"assets/img/portfolio/char_6.png",
-						"assets/img/portfolio/POSTER.jpg",
-						"assets/img/portfolio/SCENE_01.jpg",
-						"assets/img/portfolio/SCENE_02.jpg",
-						"assets/img/portfolio/SCENE_03.jpg",
-						"assets/img/portfolio/SCENE_04.jpg",
-						"assets/img/portfolio/SCENE_05.jpg",
-						"assets/img/portfolio/SCENE_06.jpg",
-						"assets/img/portfolio/SCENE_07.jpg"
+						{ src: "assets/img/portfolio/KING.png", thumb: "assets/img/portfolio/KING.png" },
+						{ src: "assets/img/portfolio/FIGTHING.png", thumb: "assets/img/portfolio/FIGTHING.png" },
+						{ src: "assets/img/portfolio/PRINCE.png", thumb: "assets/img/portfolio/PRINCE.png" },
+						{ src: "assets/img/portfolio/QUEEN.png", thumb: "assets/img/portfolio/QUEEN.png" },
+						{ src: "assets/img/portfolio/hero_with_gun.png", thumb: "assets/img/portfolio/hero_with_gun.png" },
+						{ src: "assets/img/portfolio/villan_with_gun.png", thumb: "assets/img/portfolio/villan_with_gun.png" },
+						{ src: "assets/img/portfolio/gentleman_helicoptor.png", thumb: "assets/img/portfolio/gentleman_helicoptor.png" },
+						{ src: "assets/img/portfolio/laughing_wanted.png", thumb: "assets/img/portfolio/laughing_wanted.png" },
+						{ src: "assets/img/portfolio/char_1.png", thumb: "assets/img/portfolio/char_1.png" },
+						{ src: "assets/img/portfolio/char_2.png", thumb: "assets/img/portfolio/char_2.png" },
+						{ src: "assets/img/portfolio/char_3.png", thumb: "assets/img/portfolio/char_3.png" },
+						{ src: "assets/img/portfolio/char_4.png", thumb: "assets/img/portfolio/char_4.png" },
+						{ src: "assets/img/portfolio/char_5.png", thumb: "assets/img/portfolio/char_5.png" },
+						{ src: "assets/img/portfolio/char_6.png", thumb: "assets/img/portfolio/char_6.png" },
+						{ src: "assets/img/portfolio/POSTER.jpg", thumb: "assets/img/portfolio/POSTER.jpg" },
+						{ src: "assets/img/portfolio/SCENE_01.jpg", thumb: "assets/img/portfolio/SCENE_01.jpg" },
+						{ src: "assets/img/portfolio/SCENE_02.jpg", thumb: "assets/img/portfolio/SCENE_02.jpg" },
+						{ src: "assets/img/portfolio/SCENE_03.jpg", thumb: "assets/img/portfolio/SCENE_03.jpg" },
+						{ src: "assets/img/portfolio/SCENE_04.jpg", thumb: "assets/img/portfolio/SCENE_04.jpg" },
+						{ src: "assets/img/portfolio/SCENE_05.jpg", thumb: "assets/img/portfolio/SCENE_05.jpg" },
+						{ src: "assets/img/portfolio/SCENE_06.jpg", thumb: "assets/img/portfolio/SCENE_06.jpg" },
+						{ src: "assets/img/portfolio/SCENE_07.jpg", thumb: "assets/img/portfolio/SCENE_07.jpg" }
 					]
 				}
 			};
@@ -621,50 +623,97 @@
 			const categoryTitle = document.getElementById("category-title");
 			const backBtn = document.getElementById("back-btn");
 
-			// ===== CLICK ON CATEGORY THUMB =====
-			document.querySelectorAll(".category-thumb").forEach(thumb => {
-				thumb.addEventListener("click", () => {
-					const catKey = thumb.dataset.category;
-					const catData = categories[catKey];
-					if (!catData) return;
+			// Helper to switch view
+			function showCategory(catKey) {
+				const catData = categories[catKey];
+				if (!catData) return;
 
-					// Hide main categories, show category view
-					categoryList.classList.add("hidden");
-					categoryView.classList.remove("hidden");
-					categoryTitle.textContent = catData.title;
+				// Hide main categories, show category view
+				categoryList.classList.add("hidden");
+				categoryView.classList.remove("hidden");
+				categoryTitle.textContent = catData.title;
 
-					// Build gallery
-					categoryGallery.innerHTML = "";
-					catData.images.forEach(img => {
-						const col = document.createElement("div");
-						col.className = "col-sm-6 col-lg-4";
-						col.innerHTML = `
+				// Build gallery
+				categoryGallery.innerHTML = "";
+				catData.images.forEach(imgObj => {
+					const col = document.createElement("div");
+					// Using 'box' layout similar to original
+					col.className = "col-sm-6 col-lg-4";
+					col.innerHTML = `
           <div class="box">
-            <img src="${img}" alt="">
+            <img src="${imgObj.thumb}" alt="Portfolio Image">
             <ul class="icon">
               <li>
-                <a href="${img}" class="port-icon lightbox" data-gall="${catKey}">
+                <a href="${imgObj.src}" class="port-icon lightbox" data-gall="${catKey}">
                   <i class="fa fa-eye"></i>
                 </a>
               </li>
             </ul>
           </div>`;
-						categoryGallery.appendChild(col);
-					});
-
-					categoryView.scrollIntoView({ behavior: "smooth" });
+					categoryGallery.appendChild(col);
 				});
-			});
 
-			// ===== BACK BUTTON =====
-			backBtn.addEventListener("click", () => {
+				// Re-initialize Venobox regarding new elements
+				jQuery('.lightbox').venobox({
+					numeratio: true,
+					infinigall: true
+				});
+
+				// Scroll to view
+				categoryView.scrollIntoView({ behavior: "smooth" });
+			}
+
+			function showList() {
 				categoryView.classList.add("hidden");
 				categoryList.classList.remove("hidden");
-				window.scrollTo({
-					top: categoryList.offsetTop - 50,
-					behavior: "smooth"
+
+				// Scroll back to portfolio section top
+				const portfolioSection = document.getElementById("portfolio");
+				if (portfolioSection) {
+					portfolioSection.scrollIntoView({ behavior: "smooth" });
+				}
+			}
+
+			// ===== CLICK ON CATEGORY THUMB =====
+			document.querySelectorAll(".category-thumb").forEach(thumb => {
+				thumb.addEventListener("click", () => {
+					const catKey = thumb.dataset.category;
+					// Push state to history
+					history.pushState({ category: catKey }, "", "#portfolio-" + catKey);
+					showCategory(catKey);
 				});
 			});
+
+			// ===== BACK BUTTON (On Screen) =====
+			backBtn.addEventListener("click", () => {
+				// Go back in browser history if we have state, or just show list
+				if (history.state && history.state.category) {
+					history.back();
+				} else {
+					// Fallback if accessed directly or history cleared
+					showList();
+				}
+			});
+
+			// ===== POPSTATE (Browser Back/Forward) =====
+			window.addEventListener("popstate", (event) => {
+				if (event.state && event.state.category) {
+					// If we have a category in state, show it
+					showCategory(event.state.category);
+				} else {
+					// Otherwise show the main list
+					showList();
+				}
+			});
+
+			// Handle initial load if hash is present (optional)
+			const hash = window.location.hash;
+			if (hash && hash.startsWith("#portfolio-")) {
+				const catKey = hash.replace("#portfolio-", "");
+				if (categories[catKey]) {
+					showCategory(catKey);
+				}
+			}
 		});
 	</script>
 
