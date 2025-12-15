@@ -1,17 +1,22 @@
 
-(function($) {
+(function ($) {
 	'use strict';
-	
-	jQuery(document).on('ready', function(){
-	
+
+	jQuery(document).on('ready', function () {
+
 		/*PRELOADER JS*/
-		$(window).on('load', function() { 
+		$(window).on('load', function () {
 			$('.status').fadeOut();
-			$('.preloader').delay(100).fadeOut('slow'); 
-		}); 
-		/*END PRELOADER JS*/	
-			
-		/*START MENU JS*/		
+			$('.preloader').delay(100).fadeOut('slow');
+		});
+		/*END PRELOADER JS*/
+
+		/*START MENU JS*/
+		// Close responsive menu when a scroll trigger link is clicked
+		$('.navbar-nav .nav-link').on('click', function () {
+			$('.navbar-collapse').collapse('hide');
+		});
+
 		function windowScroll() {
 			const navbar = document.getElementById("navbar");
 			if (
@@ -27,27 +32,27 @@
 		window.addEventListener('scroll', (ev) => {
 			ev.preventDefault();
 			windowScroll();
-		})	  	
+		})
 		/*END MENU JS*/
 
 		/*START PROGRESS BAR*/
-	    $('.progress-bar > span').each(function(){
+		$('.progress-bar > span').each(function () {
 			var $this = $(this);
 			var width = $(this).data('percent');
 			$this.css({
-				'transition' : 'width 2s'
+				'transition': 'width 2s'
 			});
-			
-			setTimeout(function() {
-				$this.appear(function() {
-						$this.css('width', width + '%');
+
+			setTimeout(function () {
+				$this.appear(function () {
+					$this.css('width', width + '%');
 				});
 			}, 500);
 		});
-		/*END PROGRESS BAR*/	
+		/*END PROGRESS BAR*/
 
 		/* START COUNTDOWN JS*/
-		$('.counter_feature').on('inview', function(event, visible, visiblePartX, visiblePartY) {
+		$('.counter_feature').on('inview', function (event, visible, visiblePartX, visiblePartY) {
 			if (visible) {
 				$(this).find('.counter-num').each(function () {
 					var $this = $(this);
@@ -62,27 +67,27 @@
 				$(this).unbind('inview');
 			}
 		});
-		/* END COUNTDOWN JS */		
+		/* END COUNTDOWN JS */
 
 		/* START JQUERY LIGHTBOX*/
 		jQuery('.lightbox').venobox({
 			numeratio: true,
 			infinigall: true
-		});	
-		/* END JQUERY LIGHTBOX*/	
+		});
+		/* END JQUERY LIGHTBOX*/
 
 		/* START MIX JS */
 		$('.portfolio_item').mixItUp({
-		
-		});		
-			
-	}); 		
+
+		});
+
+	});
 
 	/* START PARALLAX JS */
 	(function () {
 
-		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-		 
+		if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+
 		} else {
 			$(window).stellar({
 				horizontalScrolling: false,
@@ -92,13 +97,13 @@
 
 	}());
 	/* END PARALLAX JS  */
-	
+
 	/*START WOW ANIMATION JS*/
-	  new WOW().init();	
-	/*END WOW ANIMATION JS*/	
-			
+	new WOW().init();
+	/*END WOW ANIMATION JS*/
+
 })(jQuery);
 
 
-  
+
 

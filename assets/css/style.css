@@ -57,6 +57,11 @@ h6 {
 	font-weight: 400;
 }
 
+html {
+	scroll-padding-top: 80px;
+	/* Fix for sticky navbar overlapping content */
+}
+
 a {
 	font-family: 'Jost', sans-serif;
 	text-decoration: none;
@@ -297,7 +302,7 @@ strong {
 
 .navbar-custom {
 	background-color: transparent;
-	padding: 20px 0;
+	padding: 10px 0;
 	width: 100%;
 	border-radius: 0px;
 	z-index: 999;
@@ -346,7 +351,7 @@ strong {
 
 .navbar-custom.nav-sticky {
 	background-color: #1b1e22 !important;
-	padding: 15px 0px;
+	padding: 10px 0px;
 	border-bottom: none;
 	box-shadow: 0 10px 40px -10px rgba(0, 64, 128, .1);
 }
@@ -364,7 +369,7 @@ strong {
 	}
 }
 
-@media (min-width: 200px) and (max-width: 768px) {
+@media (max-width: 991px) {
 	.navbar-custom {
 		background-color: #1b1e22;
 		padding: 10px 0px !important;
