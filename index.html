@@ -413,70 +413,139 @@
 	<script>
 		document.addEventListener('DOMContentLoaded', () => {
 
-			// --- 1. SETUP ---
-			const PARTICLE_COUNT = 150; // Set how many particles you want
+			// --- 1. SETUP & CONFIG ---
+			const PARTICLE_COUNT = 80; // Reduced count slightly as icons are visually denser than dots
+			const THEME_COLOR = '#f0bb62';
+
+			// 50+ Icons for Design, 3D, AI, Code, Media
+			const ICONS = [
+				// Font Awesome (Design/Art/3D)
+				'fa fa-paint-brush', 'fa fa-camera', 'fa fa-cube', 'fa fa-cubes', 'fa fa-picture-o',
+				'fa fa-video-camera', 'fa fa-film', 'fa fa-magic', 'fa fa-pencil', 'fa fa-pencil-square-o',
+				'fa fa-eyedropper', 'fa fa-object-group', 'fa fa-object-ungroup', 'fa fa-clone',
+
+				// Font Awesome (Tech/Dev/AI)
+				'fa fa-code', 'fa fa-terminal', 'fa fa-laptop', 'fa fa-desktop', 'fa fa-mobile',
+				'fa fa-keyboard-o', 'fa fa-mouse-pointer', 'fa fa-microchip', 'fa fa-gamepad',
+				'fa fa-cogs', 'fa fa-cog', 'fa fa-wrench', 'fa fa-flask', 'fa fa-lightbulb-o',
+				'fa fa-bolt', 'fa fa-rocket', 'fa fa-space-shuttle', 'fa fa-android', 'fa fa-apple',
+
+				// Font Awesome (Misc/Abstract)
+				'fa fa-asterisk', 'fa fa-circle-o-notch', 'fa fa-diamond', 'fa fa-star', 'fa fa-star-o',
+				'fa fa-heart', 'fa fa-heart-o', 'fa fa-music', 'fa fa-headphones', 'fa fa-puzzle-piece',
+
+				// Themify Icons (Design/Tools)
+				'ti-ruler-pencil', 'ti-paint-bucket', 'ti-spray', 'ti-thought', 'ti-wand',
+				'ti-vector', 'ti-palette', 'ti-layers', 'ti-layout', 'ti-cut',
+				'ti-image', 'ti-gallery', 'ti-video-clapper', 'ti-control-play', 'ti-shine',
+				'ti-infinite', 'ti-target', 'ti-world', 'ti-zoom-in', 'ti-write',
+
+				// MDI (Material - Basic set typically available)
+				'mdi mdi-brush', 'mdi mdi-vector-curve', 'mdi mdi-vector-square',
+				'mdi mdi-palette', 'mdi mdi-shape-plus', 'mdi mdi-monitor-dashboard'
+			];
+
 			const container = document.getElementById('home');
 			const obstacles = document.querySelectorAll('.single-basic-info, .about_me_content h1');
 
 			if (!container) {
-				console.error("Animation container not found!");
 				return;
 			}
 
 			let containerWidth = container.clientWidth;
 			let containerHeight = container.clientHeight;
-			let obstacleRects = []; // Store obstacle dimensions
-			const particles = []; // Array to hold all particle objects
+			let obstacleRects = [];
+			const particles = [];
 
-			// --- 2. PARTICLE CREATION ---
-			function createParticles() {
-				for (let i = 0; i < PARTICLE_COUNT; i++) {
-					const particleElement = document.createElement('div');
-					particleElement.classList.add('particle');
-					container.appendChild(particleElement);
-
-					// Randomize properties for each particle
-					const size = Math.random() * 8 + 2; // Size between 2px and 10px
-					const speed = Math.random() * 1 + 0.5; // Speed between 0.5 and 1.5
-					const angle = Math.random() * 2 * Math.PI;
-
-					particleElement.style.width = `${size}px`;
-					particleElement.style.height = `${size}px`;
-					particleElement.style.opacity = Math.random() * 0.5 + 0.3; // Opacity 0.3 to 0.8
-
-					particles.push({
-						element: particleElement,
-						x: Math.random() * (containerWidth - size),
-						y: Math.random() * (containerHeight - size),
-						dx: Math.cos(angle) * speed,
-						dy: Math.sin(angle) * speed,
-						size: size
-					});
-				}
-			}
-
-			// --- 3. OBSTACLE & ANIMATION LOGIC ---
+			// --- OBSTACLE CALCULATION ---
 			function updateObstacleRects() {
 				const containerRect = container.getBoundingClientRect();
 				obstacleRects = Array.from(obstacles).map(obs => {
 					const obsRect = obs.getBoundingClientRect();
-					// Return dimensions relative to the container
 					return {
 						left: obsRect.left - containerRect.left,
 						top: obsRect.top - containerRect.top,
 						right: obsRect.right - containerRect.left,
 						bottom: obsRect.bottom - containerRect.top,
+						width: obsRect.width,
+						height: obsRect.height
 					};
 				});
 			}
 
+			// --- HELPER: CHECK COLLISION ---
+			function isInsideObstacle(x, y, size) {
+				for (const obs of obstacleRects) {
+					if (x < obs.right && x + size > obs.left &&
+						y < obs.bottom && y + size > obs.top) {
+						return true;
+					}
+				}
+				return false;
+			}
+
+			// --- PARTICLE CREATION ---
+			function createParticles() {
+				for (let i = 0; i < PARTICLE_COUNT; i++) {
+					const particleElement = document.createElement('div');
+					// Random Icon
+					const randomIcon = ICONS[Math.floor(Math.random() * ICONS.length)];
+					particleElement.className = `particle ${randomIcon}`;
+					container.appendChild(particleElement);
+
+					// Random Font Size (instead of width/height)
+					const size = Math.random() * 14 + 10; // 10px to 24px
+
+					// Styling
+					particleElement.style.position = 'absolute';
+					particleElement.style.color = THEME_COLOR;
+					particleElement.style.fontSize = `${size}px`;
+					particleElement.style.opacity = Math.random() * 0.5 + 0.2; // slightly more transparent to avoid clutter
+
+					// Ensure no background/border from previous CSS if any
+					particleElement.style.backgroundColor = 'transparent';
+					particleElement.style.borderRadius = '0';
+
+					// Random rotation for variety
+					const initialRotation = Math.random() * 360;
+					particleElement.style.transform = `rotate(${initialRotation}deg)`;
+
+					// Move Speed
+					const speed = Math.random() * 0.8 + 0.3; // Slower for floating effect
+					const angle = Math.random() * 2 * Math.PI;
+
+					// --- SPAWN FIX ---
+					let x, y;
+					for (let attempt = 0; attempt < 10; attempt++) {
+						x = Math.random() * (containerWidth - 30); // 30 is simpler margin
+						y = Math.random() * (containerHeight - 30);
+						if (!isInsideObstacle(x, y, size)) {
+							break;
+						}
+					}
+
+					particles.push({
+						element: particleElement,
+						x: x,
+						y: y,
+						dx: Math.cos(angle) * speed,
+						dy: Math.sin(angle) * speed,
+						size: size, // used for collision approximate
+						rotation: initialRotation,
+						rotSpeed: (Math.random() - 0.5) * 0.5 // Slow rotation animation
+					});
+				}
+			}
+
+			// --- ANIMATION LOOP ---
 			function animate() {
-				// Loop through every particle to update its state
 				particles.forEach(p => {
+					// Move
 					p.x += p.dx;
 					p.y += p.dy;
+					p.rotation += p.rotSpeed;
 
-					// Wall Collision
+					// --- Wall Collision ---
 					if (p.x <= 0 || p.x + p.size >= containerWidth) {
 						p.dx *= -1;
 						p.x = Math.max(0, Math.min(p.x, containerWidth - p.size));
@@ -486,29 +555,43 @@
 						p.y = Math.max(0, Math.min(p.y, containerHeight - p.size));
 					}
 
-					// Obstacle Collision
+					// --- Obstacle Collision ---
 					for (const obsRect of obstacleRects) {
 						if (p.x < obsRect.right && p.x + p.size > obsRect.left &&
 							p.y < obsRect.bottom && p.y + p.size > obsRect.top) {
 
-							// Bounce logic
-							p.dx *= -1;
-							p.dy *= -1;
-							break; // Exit loop once collision is detected for this particle
+							// Simple bounce: Determine strictly based on center point
+							const pCenterX = p.x + p.size / 2;
+							const pCenterY = p.y + p.size / 2;
+							const obsCenterX = obsRect.left + obsRect.width / 2;
+							const obsCenterY = obsRect.top + obsRect.height / 2;
+
+							const deltaX = pCenterX - obsCenterX;
+							const deltaY = pCenterY - obsCenterY;
+
+							// Normalize to aspect ratio
+							const aspectX = deltaX / (obsRect.width / 2);
+							const aspectY = deltaY / (obsRect.height / 2);
+
+							if (Math.abs(aspectX) > Math.abs(aspectY)) {
+								p.dx = Math.abs(p.dx) * (deltaX > 0 ? 1 : -1);
+							} else {
+								p.dy = Math.abs(p.dy) * (deltaY > 0 ? 1 : -1);
+							}
+							break;
 						}
 					}
 
-					// Apply new position
-					p.element.style.transform = `translate3d(${p.x}px, ${p.y}px, 0)`;
+					p.element.style.transform = `translate3d(${p.x}px, ${p.y}px, 0) rotate(${p.rotation}deg)`;
 				});
 
 				requestAnimationFrame(animate);
 			}
 
-			// --- 4. INITIALIZATION & RESIZE HANDLING ---
+			// --- INITIALIZATION ---
 			function initialize() {
-				createParticles();
 				updateObstacleRects();
+				createParticles();
 				animate();
 			}
 
@@ -516,10 +599,8 @@
 				containerWidth = container.clientWidth;
 				containerHeight = container.clientHeight;
 				updateObstacleRects();
-				// Optional: You could reposition particles on resize, but it's often not necessary
 			});
 
-			// A small delay for the typewriter animation to layout, then get obstacle positions
 			setTimeout(initialize, 2000);
 		});
 	</script>
