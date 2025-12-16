@@ -13,7 +13,22 @@
 
 		/*START MENU JS*/
 		// Close responsive menu when a scroll trigger link is clicked
-		$('.navbar-nav .nav-link').on('click', function () {
+		// Smooth Scroll & Close responsive menu
+		$('.navbar-nav .nav-link').on('click', function (e) {
+			var anchor = $(this);
+			// Only for internal links (anchors)
+			if (anchor.attr('href').indexOf('#') === 0 && anchor.attr('href').length > 1) {
+				e.preventDefault();
+				var target = $(anchor.attr('href'));
+				// We want to offset by the height of the sticky navbar (approx 70px)
+				var offset = 50;
+
+				if (target.length) {
+					$('html, body').stop().animate({
+						scrollTop: target.offset().top - offset
+					}, 800, 'swing');
+				}
+			}
 			$('.navbar-collapse').collapse('hide');
 		});
 

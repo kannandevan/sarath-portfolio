@@ -75,7 +75,7 @@
 	<!-- END NAVBAR-->
 
 	<!-- START HOME -->
-	<section data-stellar-background-ratio="0.3" id="home" class="home_bg"
+	<section id="home" class="home_bg"
 		style="background-image: url(assets/img/bg.jpg); background-size:cover; background-position: center center;">
 
 		<div class="container">
@@ -244,7 +244,7 @@
 			<div id="category-list" class="row text-center main-categories">
 				<div class="col-md-3 col-sm-6">
 					<div class="category-thumb" data-category="ai">
-						<img src="assets/img/portfolio/hero_with_gun.png" alt="AI Art">
+						<img src="assets/img/portfolio/hero_with_gun.jpg" alt="AI Art">
 						<h3>AI Art</h3>
 					</div>
 				</div>
@@ -273,7 +273,7 @@
 			<div id="category-view" class="hidden">
 				<button id="back-btn" class="back-btn"><i class="fa fa-arrow-left"></i> Back to Categories</button>
 				<h2 id="category-title" class="text-center mb-4"></h2>
-				<div id="category-gallery" class="row"></div>
+				<div id="category-gallery"></div>
 			</div>
 		</div>
 	</section>
@@ -432,35 +432,22 @@
 		document.addEventListener('DOMContentLoaded', () => {
 
 			// --- 1. SETUP & CONFIG ---
-			const PARTICLE_COUNT = 80; // Reduced count slightly as icons are visually denser than dots
+			// --- 1. SETUP & CONFIG ---
+			const PARTICLE_COUNT = 50;
 			const THEME_COLOR = '#f0bb62';
 
-			// 50+ Icons for Design, 3D, AI, Code, Media
+			// 10 Selected Icons for Design, 3D, AI
 			const ICONS = [
-				// Font Awesome (Design/Art/3D)
-				'fa fa-paint-brush', 'fa fa-camera', 'fa fa-cube', 'fa fa-cubes', 'fa fa-picture-o',
-				'fa fa-video-camera', 'fa fa-film', 'fa fa-magic', 'fa fa-pencil', 'fa fa-pencil-square-o',
-				'fa fa-eyedropper', 'fa fa-object-group', 'fa fa-object-ungroup', 'fa fa-clone',
-
-				// Font Awesome (Tech/Dev/AI)
-				'fa fa-code', 'fa fa-terminal', 'fa fa-laptop', 'fa fa-desktop', 'fa fa-mobile',
-				'fa fa-keyboard-o', 'fa fa-mouse-pointer', 'fa fa-microchip', 'fa fa-gamepad',
-				'fa fa-cogs', 'fa fa-cog', 'fa fa-wrench', 'fa fa-flask', 'fa fa-lightbulb-o',
-				'fa fa-bolt', 'fa fa-rocket', 'fa fa-space-shuttle', 'fa fa-android', 'fa fa-apple',
-
-				// Font Awesome (Misc/Abstract)
-				'fa fa-asterisk', 'fa fa-circle-o-notch', 'fa fa-diamond', 'fa fa-star', 'fa fa-star-o',
-				'fa fa-heart', 'fa fa-heart-o', 'fa fa-music', 'fa fa-headphones', 'fa fa-puzzle-piece',
-
-				// Themify Icons (Design/Tools)
-				'ti-ruler-pencil', 'ti-paint-bucket', 'ti-spray', 'ti-thought', 'ti-wand',
-				'ti-vector', 'ti-palette', 'ti-layers', 'ti-layout', 'ti-cut',
-				'ti-image', 'ti-gallery', 'ti-video-clapper', 'ti-control-play', 'ti-shine',
-				'ti-infinite', 'ti-target', 'ti-world', 'ti-zoom-in', 'ti-write',
-
-				// MDI (Material - Basic set typically available)
-				'mdi mdi-brush', 'mdi mdi-vector-curve', 'mdi mdi-vector-square',
-				'mdi mdi-palette', 'mdi mdi-shape-plus', 'mdi mdi-monitor-dashboard'
+				'fa fa-paint-brush',
+				'fa fa-camera',
+				'fa fa-cube',
+				'fa fa-video-camera',
+				'fa fa-pencil',
+				'fa fa-gamepad',
+				'fa fa-code',
+				'fa fa-laptop',
+				'ti-palette',
+				'ti-vector'
 			];
 
 			const container = document.getElementById('home');
@@ -782,13 +769,18 @@
 			}
 
 			function showList() {
+				// Only scroll if we were actually viewing a category
+				const wasCategorized = !categoryView.classList.contains("hidden");
+
 				categoryView.classList.add("hidden");
 				categoryList.classList.remove("hidden");
 
-				// Scroll back to portfolio section top
-				const portfolioSection = document.getElementById("portfolio");
-				if (portfolioSection) {
-					portfolioSection.scrollIntoView({ behavior: "smooth" });
+				// Scroll back to portfolio section top ONLY if we were in detail view
+				if (wasCategorized) {
+					const portfolioSection = document.getElementById("portfolio");
+					if (portfolioSection) {
+						portfolioSection.scrollIntoView({ behavior: "smooth" });
+					}
 				}
 			}
 
