@@ -16,17 +16,23 @@
 		// Smooth Scroll & Close responsive menu
 		$('.navbar-nav .nav-link').on('click', function (e) {
 			var anchor = $(this);
+			var href = anchor.attr('href');
 			// Only for internal links (anchors)
-			if (anchor.attr('href').indexOf('#') === 0 && anchor.attr('href').length > 1) {
+			if (href && href.indexOf('#') === 0 && href.length > 1) {
 				e.preventDefault();
-				var target = $(anchor.attr('href'));
-				// We want to offset by the height of the sticky navbar (approx 70px)
-				var offset = 50;
+				var target = $(href);
 
 				if (target.length) {
+					// Since sections have 80px padding-top, scrolling to target.offset().top
+					// leaves the heading visible below the sticky navbar without showing any of the banner
+					var targetTop = href === '#home' ? 0 : Math.max(0, target.offset().top);
 					$('html, body').stop().animate({
-						scrollTop: target.offset().top - offset
-					}, 800, 'swing');
+						scrollTop: targetTop
+					}, 600, 'swing', function () {
+						if (history.pushState) {
+							history.pushState(null, null, href);
+						}
+					});
 				}
 			}
 			$('.navbar-collapse').collapse('hide');
@@ -34,6 +40,7 @@
 
 		function windowScroll() {
 			const navbar = document.getElementById("navbar");
+			if (!navbar) return;
 			if (
 				document.body.scrollTop >= 50 ||
 				document.documentElement.scrollTop >= 50
@@ -44,10 +51,9 @@
 			}
 		}
 
-		window.addEventListener('scroll', (ev) => {
-			ev.preventDefault();
+		window.addEventListener('scroll', () => {
 			windowScroll();
-		})
+		}, { passive: true });
 		/*END MENU JS*/
 
 		/*START PROGRESS BAR*/
